@@ -1,0 +1,39 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: #cdcdcd;
+    background: #212121;
+}
+
+footer {
+    background: #303030;
+    position: fixed;
+    bottom: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #454545;
+}
+
+.bg-card {
+  background-color: #303030;
+}
+
+.font-green {
+  color: #92DE8A;
+}
+
+.font-alert {
+  color: #CF6679;
+}
+
+.font-blue {
+  color: #6cb8c4;
+}
+
+.justify-evenly {
+  justify-content: space-evenly
+}
+
+
