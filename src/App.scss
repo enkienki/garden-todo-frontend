@@ -1,14 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    min-height: 100vh;
-    margin: 0;
-    color: #cdcdcd;
-    background: #212121;
+  min-height: 100vh;
+  margin: 0;
+  color: #cdcdcd;
+  background: #212121;
 }
 
 footer {
-    background: #303030;
-    position: fixed;
-    bottom: 0;
+  background: #303030;
+  position: fixed;
+  bottom: 0;
 }
 
 hr {
@@ -21,11 +25,11 @@ hr {
 }
 
 .font-green {
-  color: #92DE8A;
+  color: #92de8a;
 }
 
 .font-alert {
-  color: #CF6679;
+  color: #cf6679;
 }
 
 .font-blue {
@@ -33,7 +37,5 @@ hr {
 }
 
 .justify-evenly {
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
-
-

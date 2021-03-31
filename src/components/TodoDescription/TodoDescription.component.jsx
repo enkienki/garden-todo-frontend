@@ -1,9 +1,10 @@
 import React from "react";
 import "../../App.scss";
 
-const TodoDescription = ({ todosDescription }) => {
+const TodoDescription = ({ todosDescription, myRef }) => {
   return (
     <div className="fl w-100 mt4 mb6 mt3-l flex flex-column items-center bg-card">
+      <div ref={myRef}></div>
       <h3 className="pa2 font-green">{todosDescription.titre}</h3>
       {todosDescription.levée.length > 0 && (
         <div className="w-50-l w-75-m w-100 pa1 tc i">

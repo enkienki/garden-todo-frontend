@@ -1,11 +1,12 @@
 import React from "react";
-import Scroll from "react-scroll";
-
 import "../../../App.scss";
 
-const scroll = Scroll.animateScroll;
-
-const TodoComponent = ({ title, plant, setTodosDescription }) => {
+const TodoComponent = ({
+  title,
+  plant,
+  setTodosDescription,
+  executeScroll,
+}) => {
   // retreive TodosDescription from DB according to tag name
   const getTodosDescription = async (tag) => {
     try {
@@ -24,11 +25,11 @@ const TodoComponent = ({ title, plant, setTodosDescription }) => {
       <div className="flex flex-wrap">
         {plant.map((plant, index) => (
           <span
-            className="ma2 bg-card br3 pa2"
+            className="ma2 bg-card br3 pa2 pointer"
             key={index}
             onClick={() => {
               getTodosDescription(plant.tag);
-              scroll.scrollToBottom();
+              executeScroll();
             }}
           >
             {plant.tag}

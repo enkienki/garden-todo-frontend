@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-
+import React, { useRef, useState } from "react";
 import "tachyons";
-
+import Errors from "./components/Errors/Errors.component";
+import Footer from "./components/Footer/Footer.component";
+import LoadingComponent from "./components/Loading/Loading.component";
+import TodoDescription from "./components/TodoDescription/TodoDescription.component";
 import Header from "./containers/Header/Header.container";
-import Weather from "./containers/Weather/Weather.container";
 import Input from "./containers/Input/Input.container";
 import TodoComponent from "./containers/Todo/components/Todo.component";
-import TodoDescription from "./components/TodoDescription/TodoDescription.component";
-import Footer from "./components/Footer/Footer.component";
-import Errors from "./components/Errors/Errors.component";
 import Todo from "./containers/Todo/Todo.container";
-import LoadingComponent from "./components/Loading/Loading.component";
+import Weather from "./containers/Weather/Weather.container";
 
 function App() {
   // used to display message during loading page
@@ -23,6 +21,9 @@ function App() {
   const [todos, setTodos] = useState();
   const [plants, setPlants] = useState();
   const [todosDescription, setTodosDescription] = useState();
+
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
 
   // fetch weatherForecast from DARKSKY API for the next 7 days
   const getWeatherForecast = async (city) => {
@@ -100,18 +101,22 @@ function App() {
                   plant={plants.filter((plant) => todo.tag.includes(plant.tag))}
                   key={index}
                   setTodosDescription={setTodosDescription}
+                  executeScroll={executeScroll}
                 />
               ))}
             </Todo>
           ) : null}
 
           {todosDescription ? (
-            <TodoDescription todosDescription={todosDescription} />
+            <TodoDescription
+              todosDescription={todosDescription}
+              myRef={myRef}
+            />
           ) : null}
         </div>
       )}
 
-      <Footer />
+      <Footer myRef={myRef} />
     </div>
   );
 }
